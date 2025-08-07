@@ -39,5 +39,94 @@ h1 {
 
 p {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom:0.5rem;
+}
+
+/* Enhanced glassmorphism for video overlay */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Video optimization */
+video {
+  filter: brightness(0.7) contrast(1.1);
+}
+
+/* Smooth gradient text animation */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.gradient-text {
+  animation: gradient-x 3s ease infinite;
+}
+/* Ultra-transparent navbar effects */
+.navbar-transparent {
+  background: rgba(0, 0, 0, 0.02);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Transparent text shadow for better readability */
+.text-shadow-transparent {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+/* Add to your globals.css for better laptop optimization */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .laptop-optimized {
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+}
+
+/* Better font scaling for laptops */
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+
+/* Custom spacing for Hero section components */
+.hero-description-reduced-gap {
+  margin-bottom: 0.25rem; /* 4px on mobile */
+}
+
+@media (min-width: 1024px) {
+  .hero-description-reduced-gap {
+    margin-bottom: -5.5rem; /* 8px on large screens */
+  }
+}
+
+/* Alternative: You can also use CSS variables for more control */
+:root {
+  --hero-gap-mobile: 0.25rem;
+  --hero-gap-desktop: 0.5rem;
+}
+
+.hero-description-custom-gap {
+  margin-bottom: var(--hero-gap-mobile);
+}
+
+@media (min-width: 1024px) {
+  .hero-description-custom-gap {
+    margin-bottom: var(--hero-gap-desktop);
+  }
 }
